@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1220">
+  <title>Smart RC Car Controller</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ARDUINO ROBOT CAR</p>
+        <h1>Smart RC Controller</h1>
+      </div>
+      <div id="status" class="status offline"><span></span> Offline</div>
+    </header>
+
+    <section class="card connection">
+      <div>
+        <h2>Bluetooth</h2>
+        <p id="connectionText">Web Bluetooth ready — BLE hardware required.</p>
+      </div>
+      <div class="connection-actions">
+        <button id="connectBtn" class="primary">Connect</button>
+        <button id="demoBtn" class="ghost">Demo Mode</button>
+      </div>
+    </section>
+
+    <section class="telemetry">
+      <div class="metric">
+        <span>MODE</span>
+        <strong id="modeValue">MANUAL</strong>
+      </div>
+      <div class="metric">
+        <span>DISTANCE</span>
+        <strong id="distanceValue">-- cm</strong>
+      </div>
+      <div class="metric">
+        <span>LAST COMMAND</span>
+        <strong id="commandValue">S</strong>
+      </div>
+    </section>
+
+    <section class="card controller">
+      <div class="controller-head">
+        <h2>Drive</h2>
+        <span class="hint">Hold a direction to drive</span>
+      </div>
+
+      <div class="dpad">
+        <button class="control up" data-command="F" aria-label="Forward">▲</button>
+        <button class="control left" data-command="L" aria-label="Left">◀</button>
+        <button class="stop" data-command="S" aria-label="Stop">STOP</button>
+        <button class="control right" data-command="R" aria-label="Right">▶</button>
+        <button class="control down" data-command="B" aria-label="Backward">▼</button>
+      </div>
+
+      <div class="quick-actions">
+        <button class="action horn" data-command="H">🔊 <span>Horn</span></button>
+        <button class="action" data-command="A">🤖 <span>Auto</span></button>
+        <button class="action" data-command="M">🎮 <span>Manual</span></button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="controller-head">
+        <h2>Sensor Head</h2>
+        <span class="hint">Servo position</span>
+      </div>
+      <div class="servo-buttons">
+        <button class="action" data-command="1">◀ <span>Left</span></button>
+        <button class="action selected" data-command="2">● <span>Center</span></button>
+        <button class="action" data-command="3"><span>Right</span> ▶</button>
+      </div>
+      <button id="distanceBtn" class="wide-action" data-command="D">📡 Measure Distance</button>
+    </section>
+
+    <section class="card log-card">
+      <div class="controller-head">
+        <h2>Activity</h2>
+        <button id="clearLog" class="tiny">Clear</button>
+      </div>
+      <div id="log" class="log" aria-live="polite"></div>
+    </section>
+
+    <footer>
+      <p>Smart RC Car • Arduino + L298N + HC-05 + Servo + HC-SR04</p>
+      <p class="small">Web Bluetooth uses BLE/GATT. Your current HC-05 is classic Bluetooth SPP and cannot be controlled directly by a normal GitHub Pages browser session.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
