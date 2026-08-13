@@ -1,5 +1,5 @@
 # Smart RC Car Controller
-
+[Smart RC Controller](https://afmjarif.github.io/RC_Controller/)
 Static GitHub Pages controller UI for the Arduino robot car.
 
 ## Current Arduino command protocol
